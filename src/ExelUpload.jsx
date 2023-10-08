@@ -1,15 +1,31 @@
 import { useState } from 'react';
 import * as XLSX from 'xlsx';
+import CopyButton from './CopyButton';
 
 
 function ExcelUpload() {
   const [excelFile, setExcelFile] = useState(null);
   const [user, setUser] = useState('');
+  const [loading, setLoading] = useState(null);
+
+  const [idap, setIdap] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [name, setName] = useState(null);
+  const [cpf, setCpf] = useState(null);
+  const [date, setDate] = useState(null);
+  const [coop, setCoop] = useState(null);
+  const [angar, setAngar] = useState(null);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     setExcelFile(file);
   };
+
+  function randomNumber() {
+    const min = 1000000;
+    const max = 9999999;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 
   function logObjeto(objeto, login) {
 
@@ -28,23 +44,43 @@ function ExcelUpload() {
       let index = array.indexOf(login) +1
 
       console.log(objeto[`A${index}`].v)
+      setIdap(objeto[`A${index}`].v)
       console.log(objeto[`B${index}`].v)
+      setEmail(objeto[`B${index}`].v)
       console.log(objeto[`C${index}`].v)
+      setName(objeto[`C${index}`].v)
       console.log(objeto[`D${index}`].v)
+      setCpf(objeto[`D${index}`].v)
 
       let date = XLSX.SSF.parse_date_code(objeto[`E${index}`].v)
       let formattedDate = `${date.d < 10 ? `0${date.d}` : date.d}/${date.m < 10 ? `0${date.m}` : date.m}/${date.y}`;
      
       console.log(formattedDate)
+      setDate(formattedDate)
       console.log(objeto[`F${index}`].v)
+      setCoop(objeto[`F${index}`].v)
+
+      setAngar(randomNumber())
     } else {
       console.log('Usuário não encontrado.');
+      setLoading('Usuário não encontrado.')
     }
 
    
   }
 
   const handleUpload = (userParam) => {
+
+    setIdap(null)
+    setEmail(null)
+    setName(null)
+    setCpf(null)
+    setDate(null)
+    setCoop(null)
+    setAngar(null)
+
+    setLoading('Carregando...')
+
     if (excelFile) {
       const reader = new FileReader();
       reader.onload = (e) => {
@@ -86,6 +122,14 @@ function ExcelUpload() {
           handleUpload(user)
         }
       }} />
+      {loading && !idap && <h3>{loading}</h3>}
+      {idap && <CopyButton text={idap}/>}
+      {email && <CopyButton text={email}/>}
+      {name && <CopyButton text={name}/>}
+      {cpf && <CopyButton text={cpf}/>}
+      {date && <CopyButton text={date}/>}
+      {coop && <CopyButton text={coop}/>}
+      {angar && <CopyButton text={angar}/>}
     </div>
   );
 }
