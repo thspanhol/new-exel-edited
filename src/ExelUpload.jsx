@@ -123,13 +123,34 @@ function ExcelUpload() {
         }
       }} />
       {loading && !idap && <h3>{loading}</h3>}
-      {idap && <CopyButton text={idap}/>}
-      {email && <CopyButton text={email}/>}
-      {name && <CopyButton text={name}/>}
-      {cpf && <CopyButton text={cpf}/>}
-      {date && <CopyButton text={date}/>}
-      {coop && <CopyButton text={coop}/>}
-      {angar && <CopyButton text={angar}/>}
+      {idap && <>
+      <h4>Idap:</h4>
+      <CopyButton text={idap}/>
+      </>}
+      {email && <>
+        <h4>E-mail:</h4>
+      <CopyButton text={email}/>
+      </>}
+      {name && <>
+        <h4>Nome Completo:</h4>
+      <CopyButton text={name}/>
+      </>}
+      {cpf && <>
+        <h4>CPF:</h4>
+      <CopyButton text={cpf}/>
+      </>}
+      {date && <>
+        <h4>Data de Nascimento:</h4>
+      <CopyButton text={date}/>
+      </>}
+      {coop && <>
+        <h4>Coop:</h4>
+      <CopyButton text={coop}/>
+      </>}
+      {angar && <>
+        <h4>Código Angariador:</h4>
+      <CopyButton text={angar}/>
+      </>}
     </div>
   );
 }
