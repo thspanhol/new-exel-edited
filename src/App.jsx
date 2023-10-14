@@ -1,12 +1,12 @@
-import './App.css'
-import ExcelUpload from './ExelUpload'
+import "./App.css";
+import ExcelUpload from "./ExelUpload";
 
 function App() {
   return (
     <>
-    <ExcelUpload />
+      <ExcelUpload />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
