@@ -59,7 +59,6 @@ function ExcelUpload() {
 
       setAngar(randomNumber());
     } else {
-      console.log("Usuário não encontrado.");
       setLoading("Usuário não encontrado.");
     }
   }
