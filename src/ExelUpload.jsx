@@ -54,7 +54,6 @@ function ExcelUpload() {
 
       console.log(formattedDate);
       setDate(formattedDate);
-      console.log(objeto[`F${index}`].v);
       setCoop(objeto[`F${index}`].v);
 
       setAngar(randomNumber());
