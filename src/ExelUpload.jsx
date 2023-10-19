@@ -52,7 +52,6 @@ function ExcelUpload() {
         date.m < 10 ? `0${date.m}` : date.m
       }/${date.y}`;
 
-      console.log(formattedDate);
       setDate(formattedDate);
       setCoop(objeto[`F${index}`].v);
 
