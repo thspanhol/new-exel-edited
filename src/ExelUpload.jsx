@@ -44,7 +44,6 @@ function ExcelUpload() {
       setEmail(objeto[`B${index}`].v);
       console.log(objeto[`C${index}`].v);
       setName(objeto[`C${index}`].v);
-      console.log(objeto[`D${index}`].v);
       setCpf(objeto[`D${index}`].v);
 
       let date = XLSX.SSF.parse_date_code(objeto[`E${index}`].v);
