@@ -40,7 +40,6 @@ function ExcelUpload() {
 
       console.log(objeto[`A${index}`].v);
       setIdap(objeto[`A${index}`].v);
-      console.log(objeto[`B${index}`].v);
       setEmail(objeto[`B${index}`].v);
       setName(objeto[`C${index}`].v);
       setCpf(objeto[`D${index}`].v);
