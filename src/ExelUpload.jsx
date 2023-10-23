@@ -38,7 +38,6 @@ function ExcelUpload() {
     if (array.includes(login)) {
       let index = array.indexOf(login) + 1;
 
-      console.log(objeto[`A${index}`].v);
       setIdap(objeto[`A${index}`].v);
       setEmail(objeto[`B${index}`].v);
       setName(objeto[`C${index}`].v);
