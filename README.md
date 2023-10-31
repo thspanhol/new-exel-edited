@@ -6,7 +6,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 Clone o repositório com o comando:
 ```
-git clone https://github.com/thspanhol/xxxxxxx.git
+git clone https://github.com/thspanhol/new-exel-edited.git
 ```
 
 Depois entre na pasta do projeto e instale as dependências com o comando:
